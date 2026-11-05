@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RivDecor — Balloon Artistry & Event Decor | Hollywood, FL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #faf6f0;
+    --blush: #e8c4b0;
+    --rose: #c9856a;
+    --dusty-mauve: #9b6e78;
+    --deep: #2b1f24;
+    --gold: #c8a96e;
+    --light-gold: #e8d9be;
+    --text: #3a2d32;
+    --muted: #7a6570;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 1.4rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(250, 246, 240, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200, 169, 110, 0.2);
+    transition: all 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--deep);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--rose); }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--rose); }
+  .nav-cta {
+    background: var(--deep);
+    color: var(--cream) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--rose) !important; color: var(--cream) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 4rem 6rem 5rem;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.6rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 2rem; height: 1px;
+    background: var(--gold);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--deep);
+    margin-bottom: 1.8rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 38ch;
+    margin-bottom: 3rem;
+  }
+  .hero-actions {
+    display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center;
+  }
+  .btn-primary {
+    background: var(--rose);
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 2.4rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.25s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--dusty-mauve); transform: translateY(-1px); }
+  .btn-ghost {
+    color: var(--deep);
+    text-decoration: none;
+    padding: 1rem 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gold);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--rose); border-color: var(--rose); }
+
+  .hero-rating {
+    margin-top: 3.5rem;
+    display: flex; align-items: center; gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--light-gold);
+  }
+  .stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; }
+  .rating-text { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+  .rating-text strong { color: var(--deep); }
+
+  .hero-right {
+    position: relative;
+    background: var(--deep);
+    overflow: hidden;
+  }
+  .hero-visual {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  /* Decorative balloon art SVG background */
+  .hero-deco {
+    width: 100%; height: 100%;
+    position: absolute; inset: 0;
+  }
+  .hero-overlay-text {
+    position: absolute;
+    bottom: 3rem; left: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: rgba(250,246,240,0.5);
+    letter-spacing: 0.08em;
+  }
+
+  /* Carousel */
+  .carousel {
+    position: absolute; inset: 0;
+    overflow: hidden;
+  }
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.77,0,0.18,1);
+  }
+  .carousel-slide {
+    min-width: 100%; height: 100%;
+    flex-shrink: 0;
+  }
+  .carousel-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(43,31,36,0.55);
+    color: var(--cream);
+    border: none; cursor: pointer;
+    width: 2.6rem; height: 2.6rem;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+    transition: background 0.2s;
+    backdrop-filter: blur(4px);
+  }
+  .carousel-btn:hover { background: var(--rose); }
+  .carousel-btn.prev { left: 1rem; }
+  .carousel-btn.next { right: 1rem; }
+  .carousel-dots {
+    position: absolute; bottom: 4.5rem; left: 0; right: 0;
+    display: flex; justify-content: center; gap: 0.4rem;
+    z-index: 10;
+  }
+  .carousel-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(250,246,240,0.4);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    border: none; padding: 0;
+  }
+  .carousel-dot.active {
+    background: var(--cream);
+    transform: scale(1.3);
+  }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+
+  .hero-left > * { animation: fadeUp 0.9s ease both; }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-title { animation-delay: 0.25s; }
+  .hero-subtitle { animation-delay: 0.4s; }
+  .hero-actions { animation-delay: 0.55s; }
+  .hero-rating { animation-delay: 0.7s; }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    background: var(--deep);
+    padding: 1rem 0;
+    overflow: hidden;
+  }
+  .marquee-inner {
+    display: flex;
+    gap: 0;
+    animation: marquee 18s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .marquee-item {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--light-gold);
+    padding: 0 2.5rem;
+    flex-shrink: 0;
+  }
+  .marquee-dot {
+    color: var(--rose);
+    padding: 0 0.5rem;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 8rem 5rem;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+    padding-right: 4rem;
+  }
+  .about-card {
+    background: var(--deep);
+    border-radius: 2px;
+    padding: 4rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute; top: -30px; right: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: var(--rose);
+    opacity: 0.15;
+  }
+  .about-card-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .about-card-sig {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .stat-pills {
+    display: flex; gap: 1rem; margin-top: 2.5rem;
+  }
+  .stat-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,169,110,0.2);
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+    flex: 1;
+  }
+  .stat-pill .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    display: block;
+  }
+  .stat-pill .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blush);
+    opacity: 0.7;
+  }
+
+  .about-content { padding-left: 2rem; }
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 1.4rem;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block; width: 2rem; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--deep);
+    margin-bottom: 1.8rem;
+  }
+  .section-title em { font-style: italic; color: var(--rose); }
+  .section-body {
+    font-size: 0.98rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 1.4rem;
+  }
+  .about-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--dusty-mauve);
+    margin-top: 2rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--blush);
+    line-height: 1.7;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    background: var(--deep);
+    padding: 8rem 5rem;
+  }
+  .services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .services-header .section-eyebrow {
+    justify-content: center;
+    color: var(--gold);
+  }
+  .services-header .section-eyebrow::before { display: none; }
+  .services-header .section-eyebrow::after {
+    content: '';
+    display: block; width: 2rem; height: 1px;
+    background: var(--gold);
+  }
+  .services-header .section-title { color: var(--cream); }
+  .services-header .section-title em { color: var(--blush); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200,169,110,0.1);
+    padding: 3rem 2.5rem;
+    transition: background 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--rose), var(--gold));
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+  .service-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(200,169,110,0.25); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+  }
+  .service-desc {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(250,246,240,0.55);
+  }
+  .service-tag {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(200,169,110,0.3);
+    padding: 0.3rem 0.8rem;
+  }
+
+  /* ── REVIEWS ── */
+  .reviews {
+    padding: 8rem 5rem;
+    background: var(--cream);
+  }
+  .reviews-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+  .reviews-score {
+    text-align: right;
+  }
+  .reviews-score .big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1;
+  }
+  .reviews-score .stars-row { color: var(--gold); font-size: 1rem; letter-spacing: 3px; }
+  .reviews-score .count {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .review-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 20px rgba(43,31,36,0.05);
+  }
+  .review-card:hover {
+    border-color: var(--blush);
+    box-shadow: 0 6px 30px rgba(43,31,36,0.1);
+  }
+  .review-stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 1.2rem; }
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .review-author {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .review-author strong { color: var(--rose); }
+  .review-author .date { opacity: 0.6; }
+
+  /* ── PRICING ── */
+  .pricing {
+    background: var(--light-gold);
+    padding: 6rem 5rem;
+    text-align: center;
+  }
+  .pricing-card {
+    background: var(--deep);
+    max-width: 460px;
+    margin: 3.5rem auto 0;
+    padding: 4rem 3.5rem;
+    position: relative;
+  }
+  .pricing-card::before {
+    content: 'Starting From';
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    background: var(--rose);
+    color: #fff;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.5rem;
+  }
+  .pricing-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .pricing-amount sup { font-size: 2rem; vertical-align: top; margin-top: 0.8rem; display: inline-block; }
+  .pricing-note {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blush);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+  }
+  .pricing-divider {
+    width: 40px; height: 1px;
+    background: rgba(200,169,110,0.3);
+    margin: 2rem auto;
+  }
+  .pricing-features {
+    list-style: none;
+    text-align: left;
+  }
+  .pricing-features li {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(250,246,240,0.7);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .pricing-features li::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 0.5rem;
+    flex-shrink: 0;
+  }
+  .pricing-cta {
+    display: block;
+    margin-top: 2.5rem;
+    background: var(--rose);
+    color: #fff;
+    text-decoration: none;
+    padding: 1.1rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: background 0.25s;
+    text-align: center;
+  }
+  .pricing-cta:hover { background: var(--dusty-mauve); }
+
+  /* ── PAYMENT ── */
+  .payment-strip {
+    background: var(--cream);
+    border-top: 1px solid var(--light-gold);
+    border-bottom: 1px solid var(--light-gold);
+    padding: 2rem 5rem;
+    display: flex; align-items: center; justify-content: center; gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .payment-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .payment-methods { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; }
+  .payment-method {
+    background: var(--deep);
+    color: var(--cream);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+  }
+
+  /* ── PAYMENT BUTTONS ── */
+  .pay-buttons {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    margin-top: 2rem; justify-content: center;
+  }
+  .pay-btn {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+    cursor: pointer; border: none;
+  }
+  .pay-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+  .pay-btn-paypal { background: #003087; color: #fff; }
+  .pay-btn-applepay {
+    background: #000; color: #fff;
+  }
+  .pay-btn-zelle { background: #6d1ed4; color: #fff; }
+  .pay-btn svg { width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 8rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .contact-info {}
+  .contact-detail {
+    margin-top: 2.5rem;
+    display: flex; flex-direction: column; gap: 2rem;
+  }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+  }
+  .contact-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .contact-item-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .contact-item-value {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+
+  .contact-form-wrap {}
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .form-input, .form-select, .form-textarea {
+    border: 1px solid var(--light-gold);
+    background: #fff;
+    padding: 0.85rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--rose);
+  }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-submit {
+    background: var(--deep);
+    color: var(--cream);
+    border: none;
+    padding: 1.1rem 2.4rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--rose); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep);
+    padding: 4rem 5rem 2.5rem;
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    gap: 3rem; flex-wrap: wrap;
+  }
+  .footer-brand .nav-logo { color: var(--cream); font-size: 1.6rem; }
+  .footer-brand p {
+    font-size: 0.82rem; font-weight: 300;
+    color: rgba(250,246,240,0.45);
+    max-width: 28ch; line-height: 1.7; margin-top: 0.8rem;
+  }
+  .footer-links-group h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .footer-links-group ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links-group a {
+    font-size: 0.82rem; font-weight: 300;
+    color: rgba(250,246,240,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links-group a:hover { color: var(--blush); }
+  .footer-bottom {
+    padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(250,246,240,0.3);
+    letter-spacing: 0.05em;
+  }
+  .footer-thumbtack {
+    font-size: 0.72rem;
+    color: rgba(250,246,240,0.3);
+    letter-spacing: 0.05em;
+  }
+  .footer-thumbtack a { color: var(--gold); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 8rem 2rem 4rem; }
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .about, .contact { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
+    .about-visual { padding-right: 0; }
+    .about-content { padding-left: 0; }
+    .services { padding: 5rem 2rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .reviews { padding: 5rem 2rem; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .reviews-header { flex-direction: column; align-items: flex-start; gap: 2rem; }
+    .pricing { padding: 5rem 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 3rem 2rem 2rem; }
+    .footer-top { flex-direction: column; }
+  }
+
+  /* modal confirm for form */
+  .toast {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: var(--deep);
+    color: var(--cream);
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    transform: translateY(80px); opacity: 0;
+    transition: all 0.4s cubic-bezier(.34,1.56,.64,1);
+    z-index: 999;
+    border-left: 3px solid var(--rose);
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Riv<span>Decor</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Hollywood, FL · Balloon Artistry</div>
+    <h1 class="hero-title">
+      Where Every<br>
+      Celebration<br>
+      <em>Flows Beautifully</em>
+    </h1>
+    <p class="hero-subtitle">
+      Custom balloon artistry crafted with precision and passion — transforming intimate gatherings into unforgettable, elegant experiences.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book Your Event</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+    <div class="hero-rating">
+      <div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="rating-text">
+        <strong>4.8 / 5.0</strong> · Rated by 6 clients on Thumbtack
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="carousel" id="heroCarousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide"><img src="2200.webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (1).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (2).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (3).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (4).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (5).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (6).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (7).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (8).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (9).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (10).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (11).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (12).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (13).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (14).webp" alt="RivDecor event decor"></div>
+        <div class="carousel-slide"><img src="2200 (15).webp" alt="RivDecor event decor"></div>
+      </div>
+      <button class="carousel-btn prev" onclick="carouselMove(-1)">&#8592;</button>
+      <button class="carousel-btn next" onclick="carouselMove(1)">&#8594;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+    <p class="hero-overlay-text">"Rivière — the natural flow of beauty"</p>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Birthdays <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Baby Showers <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Engagements <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Corporate Events <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Yacht Parties <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Hotel Decorations <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Graduations <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Special Events <span class="marquee-dot">◆</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">Birthdays <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Baby Showers <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Engagements <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Corporate Events <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Yacht Parties <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Hotel Decorations <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Graduations <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Special Events <span class="marquee-dot">◆</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="about-card">
+      <p class="about-card-quote">
+        "She didn't just decorate — she created an atmosphere. Everything felt personalized, elegant, and intentional."
+      </p>
+      <p class="about-card-sig">— Ellen C., Client</p>
+      <div class="stat-pills">
+        <div class="stat-pill">
+          <span class="num">4.8</span>
+          <span class="label">Rating</span>
+        </div>
+        <div class="stat-pill">
+          <span class="num">6+</span>
+          <span class="label">Reviews</span>
+        </div>
+        <div class="stat-pill">
+          <span class="num">1yr</span>
+          <span class="label">In Business</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-content">
+    <div class="section-eyebrow">Our Story</div>
+    <h2 class="section-title">Art That Flows<br>Like a <em>River</em></h2>
+    <p class="section-body">
+      RivDecor is dedicated to bringing the elegance of custom balloon artistry to your most cherished moments — transforming small gatherings into unforgettable experiences.
+    </p>
+    <p class="section-body">
+      Specializing in intimate events, we craft balloon designs that perfectly reflect your style and personality. The name "Riv" comes from the French word <em>Rivière</em>, meaning "river," symbolizing the natural flow and grace we bring to every celebration.
+    </p>
+    <div class="about-note">
+      We infuse passion for precision, care, and attention to detail into every creation — ensuring your event feels as seamless and beautiful as the flow of water itself.
+    </div>
+    <br>
+    <p class="section-body" style="font-size:0.85rem">
+      📍 Serving Hollywood, FL &nbsp;·&nbsp; Background Checked &nbsp;·&nbsp; Responds within a day
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div class="section-eyebrow">What We Offer</div>
+    <h2 class="section-title">Crafted for <em>Every</em> Occasion</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🎂</span>
+      <div class="service-name">Birthday Parties</div>
+      <p class="service-desc">From milestone birthdays to intimate celebrations, we craft balloon arrangements that make every age feel extraordinary.</p>
+      <span class="service-tag">Indoors &amp; Outdoors</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">👶</span>
+      <div class="service-name">Baby Showers</div>
+      <p class="service-desc">Soft, whimsical, and memorable — we design the perfect backdrop for welcoming your little one into the world.</p>
+      <span class="service-tag">Custom Themes</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💍</span>
+      <div class="service-name">Engagements</div>
+      <p class="service-desc">Romantic, elegant, unforgettable. We set the scene for one of life's most precious moments with timeless balloon artistry.</p>
+      <span class="service-tag">Luxury Styling</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏢</span>
+      <div class="service-name">Corporate Events</div>
+      <p class="service-desc">Professional décor that elevates your brand and creates a lasting impression at conferences, launches, and galas.</p>
+      <span class="service-tag">Professional Setup</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛥️</span>
+      <div class="service-name">Yacht &amp; Venue Parties</div>
+      <p class="service-desc">Floating celebrations deserve floating art. We've transformed yacht decks, hotels, and unique venues into stunning escapes.</p>
+      <span class="service-tag">Unique Venues</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🎓</span>
+      <div class="service-name">Graduations &amp; Special Events</div>
+      <p class="service-desc">Mark life's achievements with personalized designs that honor the journey and celebrate what lies ahead.</p>
+      <span class="service-tag">All Occasions</span>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <div>
+      <div class="section-eyebrow">Client Testimonials</div>
+      <h2 class="section-title">What Clients<br><em>Are Saying</em></h2>
+    </div>
+    <div class="reviews-score">
+      <div class="big-num">4.8</div>
+      <div class="stars-row">★★★★★</div>
+      <div class="count">6 Reviews on Thumbtack</div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"From start to finish, she was professional, creative, and so easy to communicate with. She didn't just decorate — she created an atmosphere. Truly top-tier service."</p>
+      <p class="review-author"><strong>Ellen C.</strong> &nbsp;<span class="date">· Jun 2025</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"She is very creative and super talented. Every design choice felt thoughtful, fresh, and perfectly suited to my taste. Her professionalism is an absolute standout."</p>
+      <p class="review-author"><strong>Louiseth N.</strong> &nbsp;<span class="date">· May 2025</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Andie did an amazing job decorating my friend's yacht party! Everything was beautiful and brought my vision to life! Super attentive, detail-oriented, and creative."</p>
+      <p class="review-author"><strong>Lauren C.</strong> &nbsp;<span class="date">· Apr 2025</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The service was outstanding, and the staff went above and beyond to ensure a great experience. I would highly recommend this company to anyone in need of decorating services."</p>
+      <p class="review-author"><strong>Monique Y.</strong> &nbsp;<span class="date">· Apr 2025</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The quality and value of work was truly exceptional! She provided options based on my budget and helped create the vision for my event. I couldn't have asked for more."</p>
+      <p class="review-author"><strong>Noa W.</strong> &nbsp;<span class="date">· Jan 2025</span></p>
+    </div>
+    <div class="review-card" style="background: var(--deep); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:1rem;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--cream); font-style:italic; line-height:1.6; padding:0 1rem;">Rated highly for work quality, professionalism &amp; punctuality.</div>
+      <a href="https://www.thumbtack.com/fl/hollywood/balloon-decorators/rivdecor-by-rivplusllc/service/537284316657459202" target="_blank" style="font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:2px;">See all reviews ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-eyebrow" style="justify-content:center; color:var(--deep)">
+    Transparent Pricing
+  </div>
+  <h2 class="section-title">Simple, <em>Flexible</em> Rates</h2>
+  <div class="pricing-card">
+    <div class="pricing-amount"><sup>$</sup>65</div>
+    <p class="pricing-note">Starting price · Custom quotes available</p>
+    <div class="pricing-divider"></div>
+    <ul class="pricing-features">
+      <li>Custom balloon design consultation</li>
+      <li>Indoor &amp; outdoor setups</li>
+      <li>Birthdays, showers, engagements &amp; more</li>
+      <li>Budget-friendly options available</li>
+      <li>Responds within a day</li>
+      <li>Background-checked professional</li>
+    </ul>
+    <a href="#contact" class="pricing-cta">Request a Custom Quote</a>
+
+    <!-- Pay Now buttons -->
+    <div class="pay-buttons">
+      <!-- PayPal: replace YOUR_PAYPAL_USERNAME with your actual PayPal.me handle -->
+      <a href="https://www.paypal.com/paypalme/YOUR_PAYPAL_USERNAME" target="_blank" class="pay-btn pay-btn-paypal">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+        Pay via PayPal
+      </a>
+
+      <!-- Apple Pay via Stripe: replace YOUR_STRIPE_PAYMENT_LINK with your actual Stripe link -->
+      <a href="https://buy.stripe.com/YOUR_STRIPE_PAYMENT_LINK" target="_blank" class="pay-btn pay-btn-applepay">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.701z"/></svg>
+        Pay with Apple Pay
+      </a>
+
+      <!-- Zelle: replace with your actual Zelle phone/email -->
+      <a href="sms:?body=Paying%20RivDecor%20via%20Zelle%20to%3A%20YOUR_ZELLE_PHONE_OR_EMAIL" class="pay-btn pay-btn-zelle">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.618 5.606H24l-1.418 2.484H8.394L13.618 5.606zM0 15.91l1.418-2.485H15.61L10.382 5.606H6.849L.625 16.395 0 15.91zm10.382 2.484H0l1.418-2.484h14.188l-5.224 2.484z"/></svg>
+        Pay via Zelle
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT STRIP -->
+<div class="payment-strip">
+  <span class="payment-label">We Accept</span>
+  <div class="payment-methods">
+    <span class="payment-method">Apple Pay</span>
+    <span class="payment-method">PayPal</span>
+    <span class="payment-method">Zelle</span>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div class="section-eyebrow">Get in Touch</div>
+    <h2 class="section-title">Let's Plan<br>Your <em>Perfect</em> Event</h2>
+    <p class="section-body">Ready to transform your celebration? Fill out the form and Andie will get back to you within a day to discuss your vision and provide a custom quote.</p>
+    <div class="contact-detail">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-item-label">Service Area</div>
+          <div class="contact-item-value">Hollywood, FL &amp; surrounding areas</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <div class="contact-item-label">Availability</div>
+          <div class="contact-item-value">Available 7 days a week, 24 hours</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div>
+          <div class="contact-item-label">Response Time</div>
+          <div class="contact-item-value">Typically responds within a day</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✅</div>
+        <div>
+          <div class="contact-item-label">Trust &amp; Safety</div>
+          <div class="contact-item-value">Background checked · Thumbtack Guarantee</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-wrap">
+    <div class="section-eyebrow">Book Your Event</div>
+    <div class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" placeholder="Jane" id="firstName">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" placeholder="Smith" id="lastName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" placeholder="jane@example.com" id="email">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input class="form-input" type="tel" placeholder="(954) 000-0000" id="phone">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Event Type</label>
+        <select class="form-select" id="eventType">
+          <option value="">Select your event type...</option>
+          <option>Birthday Party</option>
+          <option>Baby Shower</option>
+          <option>Engagement</option>
+          <option>Corporate Event</option>
+          <option>Graduation</option>
+          <option>Yacht / Venue Party</option>
+          <option>Hotel Decoration</option>
+          <option>Other Special Event</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Event Date</label>
+        <input class="form-input" type="date" id="eventDate">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tell Us About Your Vision</label>
+        <textarea class="form-textarea" placeholder="Describe your theme, color palette, venue, budget, and any special requests..." id="message"></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit()">Send Inquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo">Riv<span style="color:var(--rose)">Decor</span></a>
+      <p>Bringing the natural flow of beauty to every celebration. Custom balloon artistry in Hollywood, FL.</p>
+    </div>
+    <div class="footer-links-group">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Birthday Parties</a></li>
+        <li><a href="#services">Baby Showers</a></li>
+        <li><a href="#services">Engagements</a></li>
+        <li><a href="#services">Corporate Events</a></li>
+        <li><a href="#services">Special Events</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <h4>Payments</h4>
+      <ul>
+        <li><a href="#contact">Apple Pay</a></li>
+        <li><a href="#contact">PayPal</a></li>
+        <li><a href="#contact">Zelle</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 RivDecor by RivPlusLLC · Hollywood, FL · All rights reserved.</p>
+    <p class="footer-thumbtack">Also featured on <a href="https://www.thumbtack.com/fl/hollywood/balloon-decorators/rivdecor-by-rivplusllc/service/537284316657459202" target="_blank">Thumbtack ↗</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">✓ Message sent! Andie will be in touch within a day.</div>
+
+<script>
+  function handleSubmit() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+    // Clear form
+    ['firstName','lastName','email','phone','eventDate','message'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    document.getElementById('eventType').selectedIndex = 0;
+  }
+
+  // Sticky nav shadow
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(43,31,36,0.1)' : 'none';
+  });
+
+  // Carousel
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const dotsWrap = document.getElementById('carouselDots');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    let current = 0;
+    let autoTimer;
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = 'translateX(-' + current * 100 + '%)';
+      dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    window.carouselMove = function(dir) {
+      goTo(current + dir);
+      resetAuto();
+    };
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    resetAuto();
+  })();
+</script>
+</body>
+</html>
