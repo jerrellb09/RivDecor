@@ -1,0 +1,11 @@
+RIVDECOR prototype verification
+
+Nine recovered original photos used throughout hero, packages, add-ons and gallery.
+Official transparent PNG logo copied byte-for-byte.
+Photo copies proportionally resized to a maximum 1600px and compressed to WebP; no crops, filters or retouching.
+Package prices retained: Basic $350, Signature $650, Statement $850, Custom $1,250.
+Browser checks: desktop and 390px mobile layouts; no horizontal page overflow; mobile menu, gallery arrows and package dialog work; no broken loaded images.
+Static checks: image references and dimensions verified, JavaScript syntax checked, git diff whitespace check passed.
+The inherited inquiry flow remains a prototype SMS handoff. No inquiry was sent.
+
+Attachment retrieval limit: the referenced chat returned nine photos and one logo. Earlier mentioned baby-shower/safari/centerpiece uploads were not returned and are not replaced with stock or generated photos.

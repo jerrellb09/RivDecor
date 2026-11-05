@@ -1,0 +1,79 @@
+{
+  "photos": [
+    {
+      "original": "IMG_2288(2).jpeg",
+      "file": "assets/blue-drapery.webp",
+      "alt": "White drapery, floral arch and dusty-blue balloons",
+      "width": 1021,
+      "height": 770,
+      "source_sha256": "bb35b0cd8d6ecd71d7faf348566d20c72b2d13cef1aaad0ac92cdd1bab61b22b"
+    },
+    {
+      "original": "IMG_2198.jpeg",
+      "file": "assets/orange-display.webp",
+      "alt": "Orange, ivory and gold balloon display with event signage",
+      "width": 1152,
+      "height": 1536,
+      "source_sha256": "08cccc4378fd80bfe109c98b62388df66a1813e9ad452b9c6f891ff8984224be"
+    },
+    {
+      "original": "IMG_1413(3).jpeg",
+      "file": "assets/prom-statement.webp",
+      "alt": "Black, gold and green prom send-off d\u00e9cor",
+      "width": 1536,
+      "height": 1152,
+      "source_sha256": "d2451da3109752bd11f84835cdb9833d906e4ded721bf2ba92ef52180c354f6b"
+    },
+    {
+      "original": "IMG_2785.jpeg",
+      "file": "assets/styled-dinner.webp",
+      "alt": "Floral backdrop, green drapery and coordinated dinner table",
+      "width": 1152,
+      "height": 1536,
+      "source_sha256": "b21409afe23c61ce363560f31e0e198082ffebde5ba88e83bc368e4a5f1d2bfd"
+    },
+    {
+      "original": "IMG_2291(3).jpeg",
+      "file": "assets/brunch-kings.webp",
+      "alt": "Brunch With Kings balloons, drapery and table styling",
+      "width": 1190,
+      "height": 1600,
+      "source_sha256": "4ddab389f9afb4cec44042efde96f3e7831c4ca48fcc3b5a4d7665e9d4691271"
+    },
+    {
+      "original": "IMG_1541(2).jpeg",
+      "file": "assets/robot-party.webp",
+      "alt": "Outdoor robot-themed balloon installation",
+      "width": 1536,
+      "height": 1152,
+      "source_sha256": "c6103bf5e768d35301c1af980335ab36f0b1cda132c615dbd4d9a50a67b84090"
+    },
+    {
+      "original": "IMG_5703.jpeg",
+      "file": "assets/lavender-celebration.webp",
+      "alt": "Lavender and white balloon columns with celebration table",
+      "width": 1152,
+      "height": 1536,
+      "source_sha256": "fc871c7d6beec490f68e8ebcd1647672298dae3832abdabdc4828252d0064fab"
+    },
+    {
+      "original": "IMG_5734.jpeg",
+      "file": "assets/room-celebration.webp",
+      "alt": "Silver heart and letter balloons for a room celebration",
+      "width": 1536,
+      "height": 1152,
+      "source_sha256": "615439668927cea004d4b0ccde9e39927e7bfae56720fe8de46910935bfb0ffe"
+    },
+    {
+      "original": "IMG_1413(2).jpeg",
+      "file": "assets/prom-gallery.webp",
+      "alt": "Another original view of the prom send-off backdrop",
+      "width": 1536,
+      "height": 1152,
+      "source_sha256": "d2451da3109752bd11f84835cdb9833d906e4ded721bf2ba92ef52180c354f6b"
+    }
+  ],
+  "logo": "Official uploaded PNG copied byte-for-byte; public use authorized.",
+  "processing": "EXIF orientation, proportional downsize up to 1600px, WebP quality 88; no filters, retouching or cropping.",
+  "retrieval_limit": "Nine original photos and logo returned by referenced chat. Other mentioned attachments were not returned."
+}
